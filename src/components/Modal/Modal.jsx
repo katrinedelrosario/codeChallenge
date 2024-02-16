@@ -4,10 +4,10 @@ export const Modal = ({ setIsOpen, content }) => {
   return (
     
       <div className={style.modalContainer} onClick={() => setIsOpen(false)}>
-        <div>
+        <div className={style.modalItem}>
           <h5>{content}</h5>
         </div>
-        <button onClick={() => setIsOpen(false)}>x</button>
+        <button className={style.modalBtn} onClick={() => setIsOpen(false)}>x</button>
       </div>
     
   );

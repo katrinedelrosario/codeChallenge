@@ -11,9 +11,9 @@ export const Accordion = ({ content }) => {
           
             <Title title="Accordion" />
           
-          <div>{isActive ? "-" : "+"}</div>
+          <div className={style.accordionBtn}>{isActive ? "-" : "+"}</div>
         </div>
-        {isActive && <div>{content}</div>}
+        {isActive && <div className={style.accordionContent} >{content}</div>}
       </div>
     </div>
   );

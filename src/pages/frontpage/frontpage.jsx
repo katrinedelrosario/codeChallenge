@@ -15,20 +15,20 @@ export const Frontpage = () => {
         {isOpen && (
           <Modal
             setIsOpen={setIsOpen}
-            content="All I know is that to me
-            You look like you're havin' fun
-            Open up your lovin' arms
-            Watch out, here I come"
+            content="All I know is that to me.
+            You look like you're havin' fun.
+            Open up your lovin' arms.
+            Watch out, here I come."
           />
         )}
       </section>
       <section>
         <Accordion
          
-          content="You spin me right 'round, baby, right 'round
-Like a record, baby, right 'round, 'round, 'round
-You spin me right 'round, baby, right 'round
-Like a record, baby, right 'round, 'round, 'round"
+          content="You spin me right 'round, baby, right 'round.
+Like a record, baby, right 'round, 'round, 'round.
+You spin me right 'round, baby, right 'round.
+Like a record, baby, right 'round, 'round, 'round."
         />
       </section>
     </>
