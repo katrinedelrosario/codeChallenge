@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+    h1 {
+        font-family: "Titillium Web", sans-serif;
+        text-transform: uppercase;
+        transition: 2s ease-in-out;
+        cursor: pointer;
+        .highlight {
+            background: linear-gradient(181deg, rgba(255,255,255,0) 65%, #33ff00 65%);
+            display: inline;
+        }
+    }
+}
+

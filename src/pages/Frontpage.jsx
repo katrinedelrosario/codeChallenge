@@ -1,5 +1,6 @@
+
 export const Frontpage = () => {
     return (
-        <h1>frontpage</h1>
+        <h1>Frontpage</h1>
     )
 }
