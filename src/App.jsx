@@ -1,20 +1,26 @@
 
-import { BrowserRouter as Router, Routes, Route } from react-router-dom;
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { MainLayout } from './layout/mainLayout.jsx'
 import { Frontpage } from './pages/frontpage/frontpage.jsx'
-import { Loginpage } from './pages/loginpage/loginpage.jsx'
+import { PageNotFound } from './pages/404Page/404Page.jsx'
+
 
 function App() {
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+       {path: "/", element:<Frontpage /> },
+       {path: "*", element:<PageNotFound />}
+      ]
+    }
+  ])
+
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path=/ element={<MainLayout />} />
-          <Route index element={<Frontpage />} />
-          <Route path=/forside element={<Frontpage />} />
-          <Route path=/login element={<Loginpage />} />
-        </Routes>
-      </Router>
+     <RouterProvider router={router} />
     </>
   )
 }
