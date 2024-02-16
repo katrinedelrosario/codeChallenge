@@ -1,38 +1,51 @@
-import { useEffect, useState } from "react"
-import { useFetch } from "../../hooks/useFetch"
+
 import style from "../slider/slider.module.scss"
-import { filterSliderImages } from "../../helpers/filterSliderImages"
+import { useEffect, useState } from "react";
+import { useFetch } from "../../hooks/useFetch";
 
 export const Slider = () => {
 
-    const images = useFetch ('http://localhost:4000/imagelist')
+    const images = useFetch ('http://picsum.photos/v2/list')
     const [slideIndex, setSlideIndex] = useState(0)
-    const filteredImages = filterSliderImages(images)
-    //console.log(images);
+    console.log(images);
+
+    const fetchedImages = images?.map(img => ({
+         id: img.id,
+         src: img.download_url,
+    }))
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setSlideIndex(prevIndex => (prevIndex + 1) % filteredImages.length)
-        }, 100000) // 3000 images changes every 3sec
+            setSlideIndex(prevIndex => (prevIndex +1) % fetchedImages.length)
+        }, 5000)
         return () => clearTimeout(timer)
-    }, [slideIndex, filteredImages])
+    }, [slideIndex, fetchedImages])
 
+    useEffect (() => {
+      console.log('fetched images', fetchedImages);
+},[fetchedImages])
+const nextSlide = () => {
+    setSlideIndex((prevIndex) => (prevIndex + 1) % fetchedImages.length);
+};
 
-    useEffect(() => {
-        console.log('Filtered Images:', filteredImages);
-    }, [filteredImages]);
+const prevSlide = () => {
+    setSlideIndex((prevIndex) => (prevIndex - 1 + fetchedImages.length) % fetchedImages.length);
+};
 
-    return (
+     return (
         <div className={style.sliderContainer}>
-            {filteredImages.map((image, index) => (
-                <div key={image.id || index} className={
-                    `${style.slides} 
-                    ${style.fade} 
-                    ${index === slideIndex ? style.display: ''}`}>
-
-                        <img src={image.filename} alt={image.title}  />
-                </div>
-            ) )}
+            <button onClick={prevSlide} className={style.prevButton}>&#10094;</button>
+            <button onClick={nextSlide} className={style.nextButton}>&#10095;</button>
+            {fetchedImages && fetchedImages?.map((image, index) =>
+                index === slideIndex && (
+                    <div
+                key={image.id || index}
+                className={`${index === slideIndex ? style.fade : ''} ${style.slide}`}
+            >
+                <img src={image.src} alt={`Slide ${index}`} />
+            </div>
+                )
+            )}
         </div>
-    )
+     )
 }
