@@ -12,7 +12,6 @@ export default function Breadcrumb() {
     const pathname = location.pathname.replace("/", "") 
     const newBreadCrumbs = pathname.split("/")
     console.log(pathname);
-    console.log(newBreadCrumbs);
     setBreadCrumbs(newBreadCrumbs)
   }, [location])
   
