@@ -11,10 +11,15 @@ function App() {
     {
       path: "/",
       element: <MainLayout />,
+
+
       children: [
        {path: "/", element:<Frontpage /> },
-       {path: "*", element:<PageNotFound />}
-      ]
+      ],
+    },
+    {
+      path: "*",
+      element: <PageNotFound />
     }
   ])
 
