@@ -80,6 +80,7 @@ Like a record, baby, right 'round, 'round, 'round."
       color="red"
       size="26px"
       backgroundColor="blue"
+      onClick={() => console.log("hey")}
       />
       
     </>
