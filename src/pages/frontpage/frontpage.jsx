@@ -74,7 +74,13 @@ Like a record, baby, right 'round, 'round, 'round."
       </section>
 
       <Cookie />
-      <Button />
+      here
+      <Button 
+      text="hey"
+      color="red"
+      size="26px"
+      backgroundColor="blue"
+      />
       
     </>
   );
