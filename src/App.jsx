@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Router>
+        <Breadcrumb />
         <Routes>
           <Route path='/' element={<MainLayout />} />
           <Route index element={<Frontpage />} />
