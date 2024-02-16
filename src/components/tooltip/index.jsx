@@ -13,16 +13,20 @@ export default function Tooltip({ title, onClick, tooltip, className }) {
       onClick={onClick}
       >
         {title}
-      </button>
-      {open && (
+        
+        {/* tooltip popup */}
+        {open && (
         <div
         className={style.tooltipMessage}
         >
           <p>
             {tooltip}
           </p>
+        {/* tooltip popup */}
+          
         </div>
       )}
+      </button>
     </div>
   )
 }
