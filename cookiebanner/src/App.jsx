@@ -9,9 +9,9 @@ function App() {
       <Cookie />
       <Button
     backgroundColor="slateblue"
-    color="white"
-    size="20px"
-    text="Click me"
+    color="black"
+    size="25px"
+    text="Click mig"
     onClick={() => alert('Button clicked!')}
 />
     </>
