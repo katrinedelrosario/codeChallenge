@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal } from "../../components/Modal/Modal";
+import { Title } from "../../components/title/title";
 
 export const Frontpage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,7 @@ export const Frontpage = () => {
     <>
       <h1>Frontpage</h1>
       <section>
-        <button onClick={() => setIsOpen(true)}>Open Modal</button>
+        <button onClick={() => setIsOpen(true)}><Title title={'Open modal'}/></button>
         {isOpen && (
           <Modal
             setIsOpen={setIsOpen}
