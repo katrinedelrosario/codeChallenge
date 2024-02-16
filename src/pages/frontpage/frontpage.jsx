@@ -1,8 +1,12 @@
+import { Slider } from "../../components/slider/slider"
+import { Title } from "../../components/title/title"
+
 export const Frontpage = () => {
 
     return (
         <div>
-            <h1>Frontpage</h1>
+            <Title title="Team Write ✍🏼" alignment="center" />
+            <Slider />
         </div>
     )
 }
