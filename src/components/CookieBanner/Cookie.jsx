@@ -24,12 +24,14 @@ export const Cookie = () => {
     };
 
     return (
-        <div>
+        <div
+        className="sticky bottom-5 ml-5"
+        >
             {showBanner && (
-                <div className="block max-w-40">
-                    <form className=" bg-gray-400">
+                <div className="block max-w-40 ">
+                    <form className=" bg-gray-400 p-3">
                         <h1 className="text-2xl">This site uses cookies</h1>
-                        <button className="bg-green-700 p-1 gap-1 rounded hover:bg-sky-700"type="button" onClick={acceptCookies}>Accept</button>
+                        <button className="bg-green-700 p-1 gap-1 rounded hover:bg-sky-700 mr-2"type="button" onClick={acceptCookies}>Accept</button>
                         <button className="bg-slate-700 p-1 gap-1 rounded hover:bg-sky-700" type="button" onClick={denyCookies}>Decline</button>
                     </form>
                 </div>
