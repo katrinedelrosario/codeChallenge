@@ -1,13 +1,18 @@
+
 import { useState } from "react";
 import { Modal } from "../../components/Modal/Modal";
 import { Title } from "../../components/title/title";
 import { Accordion } from "../../components/Accordion/Accordion";
+import { Slider } from "../../components/slider/slider"
+import { Title } from "../../components/title/title"
+import Tooltip from "../../components/tooltip"
 
 export const Frontpage = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <h1>Frontpage</h1>
+      <Title title="Team Write ✍🏼" alignment="center" />
+            <Slider />
       <section>
         <button onClick={() => setIsOpen(true)}>
           <Title title={"Open modal"} />
@@ -34,3 +39,4 @@ Like a record, baby, right 'round, 'round, 'round."
     </>
   );
 };
+
