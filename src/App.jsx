@@ -10,9 +10,11 @@ function App() {
       <Router>
         <Breadcrumb />
         <Routes>
+
           <Route path='/' element={<MainLayout />} />
           <Route index element={<Frontpage />} />
           <Route path='/forside' element={<Frontpage />} />
+
         </Routes>
       </Router>
     </>
