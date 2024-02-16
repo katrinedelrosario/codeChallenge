@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Modal } from "../../components/Modal/Modal";
-
 import { Accordion } from "../../components/Accordion/Accordion";
 import { Slider } from "../../components/slider/slider";
 import { Title } from "../../components/title/title";
 import Tooltip from "../../components/tooltip";
+import { Cookie } from "../../components/CookieBanner/Cookie";
+import { Button } from "../../components/Buttons/Button";
 
 export const Frontpage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export const Frontpage = () => {
       <Slider />
       <section>
         <button onClick={() => setIsOpen(true)}>
-          <Title title={"Open modal"} />
+          <Title title={"Open modal"} alignment="center" />
         </button>
         {isOpen && (
           <Modal
@@ -34,6 +35,9 @@ You spin me right 'round, baby, right 'round.
 Like a record, baby, right 'round, 'round, 'round."
         />
       </section>
+      <Tooltip />
+      <Cookie />
+      <Button />
     </>
   );
 };

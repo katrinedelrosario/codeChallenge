@@ -14,7 +14,7 @@ function App() {
           <Route path='/' element={<MainLayout />} />
           <Route index element={<Frontpage />} />
           <Route path='/forside' element={<Frontpage />} />
-
+  
         </Routes>
       </Router>
     </>
