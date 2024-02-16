@@ -1,3 +1,5 @@
+import Tooltip from "../../components/tooltip"
+
 export const Frontpage = () => {
 
     return (
