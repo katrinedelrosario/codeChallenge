@@ -1,18 +1,17 @@
-
 import { useState } from "react";
 import { Modal } from "../../components/Modal/Modal";
-import { Title } from "../../components/title/title";
+
 import { Accordion } from "../../components/Accordion/Accordion";
-import { Slider } from "../../components/slider/slider"
-import { Title } from "../../components/title/title"
-import Tooltip from "../../components/tooltip"
+import { Slider } from "../../components/slider/slider";
+import { Title } from "../../components/title/title";
+import Tooltip from "../../components/tooltip";
 
 export const Frontpage = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Title title="Team Write ✍🏼" alignment="center" />
-            <Slider />
+      <Slider />
       <section>
         <button onClick={() => setIsOpen(true)}>
           <Title title={"Open modal"} />
@@ -29,7 +28,6 @@ export const Frontpage = () => {
       </section>
       <section>
         <Accordion
-         
           content="You spin me right 'round, baby, right 'round.
 Like a record, baby, right 'round, 'round, 'round.
 You spin me right 'round, baby, right 'round.
@@ -39,4 +37,3 @@ Like a record, baby, right 'round, 'round, 'round."
     </>
   );
 };
-
